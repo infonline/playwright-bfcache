@@ -1,4 +1,4 @@
-import { chromium, expect, firefox, test } from '@playwright/test';
+import {chromium, firefox, test} from '@playwright/test';
 
 const browsers = [
     {
@@ -11,7 +11,9 @@ const browsers = [
     {
         instance: firefox,
         name: 'Firefox',
-        options: {},
+        options: {
+            headless: false,
+        },
     },
 ];
 
