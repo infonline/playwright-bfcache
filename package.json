@@ -1,0 +1,16 @@
+{
+  "name": "playwright-bfcache",
+  "version": "1.0.0",
+  "description": "Playwright bfcache demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "serve": "serve -p 8080"
+  },
+  "author": "Matthias Böhm",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "1.22.2",
+    "serve": "^14.2.0"
+  }
+}

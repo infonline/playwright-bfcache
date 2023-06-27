@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Page 2 Playwright bfcache demo</title>
+</head>
+<body>
+<h1>Page 2</h1>
+<p><a href="page1.html">Go to page 1</a></p>
+<p><a href="javascript:history.back();">Go back (history.back())</a></p>
+
+<h3>Description</h3>
+<p>In order to see if the page was loaded from bfcache, open the console in the DevTools.</p>
+<p>You now should see a message that shows if the page was loaded from bfcache or without.</p>
+<p>If you navigate via link from page 1 to page 2 and then go back in history (by using the link or the back arrow in the browser), the page should load from bfcache.</p>
+<p>To find out more about Back/forward cache (bfache) visit <a href="https://web.dev/bfcache/" target="_blank">web.dev/bfcache</a></p>
+
+<script>
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted === true) {
+            console.log('Page loaded from bfcache');
+            window.loadedFromBfcache = true;
+        } else {
+            console.log('Page loaded without cache');
+            window.loadedFromBfcache = false;
+        }
+    });
+</script>
+</body>
+</html>
